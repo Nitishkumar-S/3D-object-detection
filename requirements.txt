@@ -1,6 +1,18 @@
-nuscenes-devkit
-torch==2.3.1
-torchvision==0.18.1
-torchaudio==2.3.1
+# PyTorch CUDA 12.1 wheels
+--extra-index-url https://download.pytorch.org/whl/cu121
 
-# pip install -r requirements.txt --index-url https://download.pytorch.org/whl/cu121
+# Core packages
+torch==2.1.2
+torchvision==0.16.2
+torchaudio==2.1.2
+numpy==1.26.4
+opencv-python<4.10.0
+
+# OpenMMLab Package Manager & 3D Tools
+openmim
+mmengine
+mmcv==2.1.0
+mmdet==3.2.0
+spconv-cu120
+mmdet3d
+nuscenes-devkit
