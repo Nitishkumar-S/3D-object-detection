@@ -10,9 +10,5 @@ opencv-python<4.10.0
 
 # OpenMMLab Package Manager & 3D Tools
 openmim
-mmengine
-mmcv==2.1.0
-mmdet==3.2.0
 spconv-cu120
-mmdet3d
 nuscenes-devkit
