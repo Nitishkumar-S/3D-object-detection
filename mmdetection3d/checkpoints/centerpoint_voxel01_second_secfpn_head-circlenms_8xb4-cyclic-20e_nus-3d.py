@@ -525,6 +525,8 @@ test_evaluator = dict(
     backend_args=None,
     data_root='data/nuscenes/',
     metric='bbox',
+    # format_only=True,
+    # jsonfile_prefix='work_dirs/official_submission',
     type='NuScenesMetric')
 test_pipeline = [
     dict(

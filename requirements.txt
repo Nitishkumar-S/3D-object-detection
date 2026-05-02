@@ -10,5 +10,5 @@ opencv-python<4.10.0
 
 # OpenMMLab Package Manager & 3D Tools
 openmim
-spconv-cu120
+spconv-cu121
 nuscenes-devkit
