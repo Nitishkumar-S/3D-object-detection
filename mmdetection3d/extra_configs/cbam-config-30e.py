@@ -521,14 +521,25 @@ test_dataloader = dict(
     num_workers=1,
     persistent_workers=True,
     sampler=dict(shuffle=False, type='DefaultSampler'))
-test_evaluator = dict(
-    ann_file='data/nuscenes/nuscenes_infos_val_pruned.pkl',
-    backend_args=None,
-    data_root='data/nuscenes/',
-    metric='bbox',
-    # format_only=True,
-    # jsonfile_prefix='work_dirs/official_submission',
-    type='NuScenesMetric')
+# test_evaluator = dict(
+#     ann_file='data/nuscenes/nuscenes_infos_val_pruned.pkl',
+#     backend_args=None,
+#     data_root='data/nuscenes/',
+#     metric='bbox',
+#     # format_only=True,
+#     # jsonfile_prefix='work_dirs/official_submission',
+#     type='NuScenesMetric')
+test_evaluator = [
+    dict(
+        ann_file='data/nuscenes/nuscenes_infos_val_pruned.pkl',
+        backend_args=None,
+        data_root='data/nuscenes/',
+        metric='bbox',
+        type='NuScenesMetric'),
+    dict(
+        type='DumpResults', 
+        out_file_path='predictions.pkl') # To save the raw boxes!
+]
 test_pipeline = [
     dict(
         backend_args=None,
