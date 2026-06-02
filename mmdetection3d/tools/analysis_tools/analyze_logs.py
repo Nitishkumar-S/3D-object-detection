@@ -52,6 +52,7 @@ def plot_curve(log_dicts, args):
         epochs = list(log_dict.keys())
         for j, metric in enumerate(metrics):
             print(f'plot curve of {args.json_logs[i]}, metric is {metric}')
+            plt.ylabel(metric)
             if metric not in log_dict[epochs[int(args.eval_interval) - 1]]:
                 if args.eval:
                     raise KeyError(
@@ -87,6 +88,11 @@ def plot_curve(log_dicts, args):
                 plt.plot(
                     xs, ys, label=legend[i * num_metrics + j], linewidth=0.5)
                 plt.legend()
+        if args.xlim is not None:
+            if len(args.xlim) == 1:
+                plt.xlim(left=args.xlim[0])
+            else:
+                plt.xlim(args.xlim[0], args.xlim[1])
         if args.title is not None:
             plt.title(args.title)
     if args.out is None:
@@ -131,6 +137,12 @@ def add_plot_parser(subparsers):
         '--backend', type=str, default=None, help='backend of plt')
     parser_plt.add_argument(
         '--style', type=str, default='dark', help='style of plt')
+    parser_plt.add_argument(
+        '--xlim',
+        type=float,
+        nargs='+',
+        default=[500],
+        help='x-axis limits: provide min [max], default min is 500')
     parser_plt.add_argument('--out', type=str, default=None)
 
 
