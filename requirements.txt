@@ -8,6 +8,8 @@ torchaudio==2.1.2
 numpy==1.26.4
 opencv-python<4.10.0
 seaborn==0.13.2
+matplotlib
+tqdm
 
 # OpenMMLab Package Manager & 3D Tools
 openmim
